@@ -1,0 +1,22 @@
+package need.impl;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import need.DAO.NeedDAO;
+import need.VO.NeedVO;
+import need.service.NeedService;
+
+@Service("needService")
+public class NeedImpl implements NeedService{
+
+	@Resource( name= "needDAO")
+	NeedDAO needDAO;
+
+	@Override
+	public String insertTest(NeedVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return needDAO.insertTest(vo);
+	}
+}

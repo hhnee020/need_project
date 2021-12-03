@@ -1,0 +1,27 @@
+
+#editor {
+    padding: 16px 24px;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    height: 500px;
+    text-align: left;
+    overflow: auto;
+    
+}
+.editor-menu{
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 0.5% 0% 0.5% 0%;
+}
+.editor-menu > button[type="button"]{padding: 1px 3px 1px 3px;}
+#editor img {
+    max-height: 75%;
+    max-width: 75%;
+    
+}
+#editor > p {
+    padding: 0;
+    margin: 0;
+}
+#img-selector {display: none;}

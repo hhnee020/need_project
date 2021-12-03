@@ -1,0 +1,31 @@
+package need.controller;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import need.VO.NeedVO;
+import need.service.NeedService;
+
+@Controller
+public class NeedController {
+	
+	@Resource(name= "needService")
+	NeedService needService;
+
+	@RequestMapping("declation.do")
+	public String test() throws Exception {
+		return "jsp/public/declation";
+	}
+	
+	@RequestMapping("testSave.do")
+	public String testsave(NeedVO vo)throws Exception{
+		System.out.println(vo.getA());
+		System.out.println(vo.getB());
+		System.out.println(vo.getC());
+		String result = needService.insertTest(vo);
+		if(result != null) ;
+		return "test/tests";
+	}
+}

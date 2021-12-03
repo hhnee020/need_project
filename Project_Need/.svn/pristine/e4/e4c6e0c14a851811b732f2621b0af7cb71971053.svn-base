@@ -1,0 +1,16 @@
+package need.DAO;
+
+import org.springframework.stereotype.Repository;
+
+import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
+import need.VO.NeedVO;
+
+@Repository("needDAO")
+public class NeedDAO extends EgovAbstractDAO{
+
+	public String insertTest(NeedVO vo) {
+		// TODO Auto-generated method stub
+		return (String) insert("needDAO.insertTest",vo);
+	}
+
+}

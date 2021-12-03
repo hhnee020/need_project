@@ -1,0 +1,10 @@
+package need.service;
+
+import need.VO.NeedVO;
+
+public interface NeedService {
+
+	String insertTest(NeedVO vo) throws Exception;
+	
+
+}

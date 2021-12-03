@@ -1,0 +1,91 @@
+
+document.execCommand("defaultParagraphSeparator", false, "p");
+var filearray = new Array();
+
+$(function(){
+    const editor = document.getElementById("editor");
+    
+    $("#btn-underline").click(function () {
+        setStyle("underline");
+    });
+    $("#btn-italic").click(function () {
+        setStyle("italic");
+    });
+    $("#btn-bold").click(function () {
+        setStyle("bold");
+    });
+    $("#btn-strike").click(function () {
+        setStyle("strikeThrough");
+    });
+    $("#btn-left").click(function () {
+        setStyle("justifyLeft");
+    });
+    $("#btn-center").click(function () {
+        setStyle("justifyCenter");
+    });
+    $("#btn-right").click(function () {
+        setStyle("justifyRight");
+    });
+    $("#btn-img").click(function () {
+        $("#img").click();
+    });
+
+    $("#img").change(function fileadd(e){
+        $.each($(e.target.files), function(i,item){
+            filearray.push(item);
+        })
+        
+        $.each($(e.target.files), function(i,item){
+            const reader = new FileReader();
+            reader.onload = function(item){
+                focusEditor();
+                document.execCommand("insertImage",false,reader.result);
+            }
+            reader.readAsDataURL(item);
+        })
+    })
+
+    $("#btn_save").click(function (){        
+        var frm = new FormData($("#frm")[0]);
+        $.each($(filearray), function(i,item){
+            //console.log(`${i}` + item);
+            frm.append('file',item);
+        })
+        //console.log(frm.getAll("file"));
+
+        var htmlclone = $("#editor").clone();
+        var arrays = htmlclone.find('img');
+        $.each($(arrays),function(i,item){
+            $(arrays[i]).attr('src','');
+        });
+
+        frm.append('content',htmlclone.html());
+        callAjax(frm,"localhost:8080/filetest.do");
+    })
+})
+
+function callAjax(frm,urlRoute){
+    $.ajax({
+        type: "post",
+        url: urlRoute,
+        data: frm,
+        dataType: "text",
+        contentType: false,
+        processData: false,
+        success: function(data){
+            if(data=="ok") alert("ok");
+            else alert("no");
+        },
+        error: function(data){
+            alert('error');
+        }
+    })
+}
+
+function focusEditor() {
+        editor.focus();
+}
+function setStyle(style) {
+        document.execCommand(style);
+        focusEditor();
+}

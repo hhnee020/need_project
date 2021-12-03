@@ -1,0 +1,37 @@
+table, tr, td,th {
+
+    border: none;
+}
+table {
+    margin-top: 5%;
+    width: 80%;
+}
+td,tr, table,th {
+    border: 1px solid #555;
+}
+.td{
+    text-align: left;
+    padding-left: 2%;
+}
+.content{
+    height: 200px;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 2%;
+}
+
+
+#infoDeclation {
+    text-align: left;
+    display: inline-block; 
+    width: 100%; 
+    margin-top: 2%;
+}
+#infoDeclation > li {
+    display: inline-block;
+    text-align: left;
+    padding-right: 3%;
+}
+.target_table {
+    width: 400px;
+}
