@@ -5,7 +5,7 @@
 <html lang="kr">
  <head>
 	<meta charset="UTF-8">
-	<title>어드민 신고 관리</title>
+	<title>어드민 통합관리</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -17,16 +17,15 @@
 	<link rel="stylesheet" href="/css/public/jquery_ui.css">
 	<link rel="stylesheet" href="/css/public/style.css">
 	<link rel="stylesheet" href="/css/eunseong/ad_all.css">
- 	
- 	<script>
+    
+    <script>
         function fn_popup1(){
-        	var url = "adKategorieList.jsp";
+            var url = "adKategorieList.jsp";
             var winl = (screen.width-500) / 2;
             var wint = (screen.height-350) / 2;
             window.open(url, '', 'status=no, height=' + 350  + ', width=' + 500  + ', left='+ winl + ', top='+ wint);
         }
     </script>
- 
  </head>
 
 <body>
@@ -86,16 +85,15 @@
 				<button type ="button" class= "nav_button" onclick="location='adDeclation.jsp' ">신고 게시판</button>
 				<button type="button"  class= "nav_button" onclick="fn_popup1(); return false;">카테고리 관리</button>
 			</div>
-			<div style = "width:600px; border:1px solid #ffffff;  text-align:left; ">
+			<div style = "width:600px; border:1px solid #ffffff; text-align:left; ">
 			<span>검색  | </span><select>
-						<option value ="">검색유형</option>
-						<option value ="내용">닉네임</option>
-						<option value ="제목">내용</option>
+						<option value ="내용">내용</option>
+						<option value ="제목">제목</option>
 					</select>
-						<input type ="text" placeholder="검색어를 입력해주세요" style ="height:18px;">
+						<input type ="text" placeholder="검색어를 입력해주세요" style ="height:18px;" >
 						<button type="button">검색</button>
 				<div style ="text-align:left;">
-				<span>신고 기간 | </span>
+				<span>등록일 | </span>
 				<input type ="text" name ="sdate" id = "sdate"  >
 				~
 				<input type ="text" name ="edate" id = "edate" >
@@ -105,17 +103,11 @@
 				<button type="button">1개월</button>
 				</div>
 				<div style ="text-align:left;">
-				<span>신고 유형 |</span>
+				<span>게시판 분류 |</span>
 					<select>
-						<option value ="">유형 선택</option>
-						<option value ="동네">유형1</option>
-						<option value ="마켓">유형2</option>
-						<option value ="마켓">유형3</option>
-					</select>
-					<span>처리</span>
-					<select>
-						<option value ="미처리">미처리</option>
-						<option value ="처리">처리</option>
+						<option value ="">분류 선택</option>
+						<option value ="동네">동네</option>
+						<option value ="마켓">마켓</option>
 					</select>
 				</div>
 			</div>
@@ -132,56 +124,68 @@
 					<tr style ="background-color:#04b4f6; text-align:center;">
 						<th class="main_th"><input type ="checkbox"></th>
 						<th class="main_th">번호</th>
-						<th class="main_th">신고 유형</th>
-						<th class="main_th">신고 내용</th>
-						<th class="main_th">신고인</th>
-						<th class="main_th">신고 등록일</th>
-						<th class="main_th">처리상태</th>
+						<th class="main_th">분류</th>
+						<th class="main_th">내용</th>
+						<th class="main_th">글쓴이</th>
+						<th class="main_th">등록일</th>
+						<th class="main_th">조회수</th>
+						<th class="main_th">답글수</th>
+						<th class="main_th">기능</th>
 					</tr>
 					<tr>
 						<td><input type ="checkbox"></td>
 						<td>105</td>
-						<td>유형1</td>
-						<td>노트북을 가지고 도망쳤어요</td>
+						<td>동네</td>
+						<td><b>[질문]</b> 삼성동 앞 고양이~~</td>
 						<td>홍길동</td>
 						<td>2021.10.10</td>
-						<td>처리</td>
+						<td>100</td>
+						<td>50</td>
+						<td>수정/삭제</td>
 					</tr>
 					<tr>
 						<td><input type ="checkbox"></td>
 						<td>104</td>
-						<td>유형4</td>
-						<td>사기꾼이에요</td>
+						<td>마켓</td>
+						<td><b>[판매글]</b> 아이패드 팔아요</td>
 						<td>사과맨</td>
 						<td>2021.10.10</td>
-						<td>처리</td>
+						<td>10</td>
+						<td>20</td>
+						<td>수정/삭제</td>
 					</tr>
 					<tr>
 						<td><input type ="checkbox"></td>
 						<td>103</td>
-						<td>유형3</td>
-						<td>개인정보를 요구합니다</td>
+						<td>마켓</td>
+						<td><b>[구매글]</b> 노트북 삽니다</td>
 						<td>사과맨</td>
 						<td>2021.10.10</td>
-						<td>처리</td>
+						<td>10</td>
+						<td>20</td>
+						<td>수정/삭제</td>
 					</tr>
 					<tr>
 						<td><input type ="checkbox"></td>
 						<td>102</td>
-						<td>유형1</td>
-						<td>입금을 하지않았습니다</td>
+						<td>동네</td>
+						<td><b>[약속]</b> 17:00에 영화 보실분</td>
 						<td>가나다</td>
 						<td>2021.10.10</td>
-						<td>미처리</td>
+						<td>1</td>
+						<td>0</td>
+						<td>수정/삭제</td>
 					</tr>
 					<tr>
 						<td><input type ="checkbox"></td>
 						<td>101</td>
-						<td>유형3</td>
-						<td>노트북을 가지고 도망쳤어요</td>
+						<td>마켓</td>
+						<td><b>[판매글]</b> 키보드 팔아요</td>
 						<td>사과맨</td>
 						<td>2021.10.10</td>
-						<td>미처리</td>
+						<td>10</td>
+						<td>20</td>
+						<td>수정/삭제</td>
 					</tr>
 				</table>
 			</div>

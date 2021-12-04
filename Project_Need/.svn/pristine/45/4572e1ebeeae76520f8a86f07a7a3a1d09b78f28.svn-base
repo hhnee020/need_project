@@ -71,15 +71,15 @@
                     </tr>
                     <tr>
                         <td class="view_td viewtd2">완료 문의 : 12건</td>
-                        <td class="view_td" id="question_list_view" onclick="location=''">문의 목록 보기</td>
+                        <td class="view_td" id="question_list_view" onclick="location='aQuestionList.do'">문의 목록 보기</td>
                     </tr>
                 </table>
             </div>
             <div class="content_list_box">
                 <h4 style="padding-top: 2%;">&lt; 자주 질문 답변 관리 &gt;</h4>
                 <div style="position: absolute; top: 35%; left: 14%;">
-                    <div style="display: inline-block;" class="at_question">답변 목록</div>
-                    <div style="display: inline-block;" class="at_question">답변 작성</div>
+                    <div style="display: inline-block;" class="at_question"><a href="questionList.do">답변 목록</a></div>
+                    <div style="display: inline-block;" class="at_question"><a href="aQuestionWrite.do">답변 작성</a></div>
                 </div>
             </div>
         </div>
