@@ -6,18 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< .mine
     <link rel="stylesheet" href="../../../css/style.css">
-    <link rel="stylesheet" href="/css/minjeong/memberPage.css">
-||||||| .r31
-=======
-    <link rel="stylesheet" href="/css/public/User_view_style.css">
-    <link rel="stylesheet" href="/css/minjeong/memberPage.css">
->>>>>>> .r36
+    <link rel="stylesheet" href="../../css/memberPage.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javaScript" src="/js/minjeong/memberjs.js"></script>
+    <script type="text/javaScript" src="../script/ASscript.js"></script>
     <title>회원정보</title>
 </head>
 
@@ -25,17 +19,17 @@
     <div id="wrap">
 
         <header class="clearfix">
-            <img src="/images/src/Logo.png" class="logo">
+            <img src="../../../src/Logo.png" class="logo">
             
         
             <div class="login ">
-             
-             <ul class="nav1">
-	             <li>
-	                 <a href="">관리자</a></li>
-	             <li>
-	                 <a href="">로그아웃</a></li>
-	     
+                
+                <ul class="nav1">
+                <li>
+                    <a href="">관리자</a></li>
+                <li>
+                    <a href="">로그아웃</a></li>
+        
             </ul>
             </div>
             
@@ -50,15 +44,17 @@
                     </li>
                     
                     <li><a href="">문의 상담</a></li>
-                    <li><a href="">신고처리</a></li>
+                    <li><a href="">접속통계</a></li>
                 </ul>    
             
             </nav>
         
             <nav class="nav2 clearfix "> 
             <ul class="">
-                <li><a href="memberList.do">회원목록조회</a></li>  
-                <li><a href="memberOut.do">탈퇴회원관리</a></li>
+                <li><a href="memberList.html">회원목록조회</a></li>
+                <li><a href="memberLevel.html">회원등급관리</a></li>
+                <li><a href="memberOut.html">탈퇴회원관리</a></li>
+                <li><a href="#">회원통계</a></li>
             </ul> 
             </nav>
         
@@ -103,13 +99,15 @@
                     <th class="info_th">이메일 수신</th>
                         <td colspan="3" class="info_td">
                             <input type="radio" name="email" checked="checked" value="예">예
-                            <input type="radio" name="email">아니오</td>  
+                            <input type="radio" name="email">아니오</td>
+                    </th>
                 </tr>        
                 <tr>
                     <th class="info_th">SMS 수신</th>
                         <td colspan="3"class="info_td">
                             <input type="radio"name="sms" checked="checked" value="예">예
                             <input type="radio"name="sms">아니오</td>
+                    </th> 
                 </tr>
                 <tr>
                     <th class="info_th">주소</th>
