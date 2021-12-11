@@ -7,6 +7,11 @@
 	        <map>
 	        	<entry key="pageUnit" value="10"/>
 	        	<entry key="pageSize" value="10"/>
+	        	<entry key="access_denied" value="access_denied"/>
+	        	<entry key="invalid_request" value="invalid_request"/>
+	        	<entry key="authorization_code" value="authorization_code"/>
+	        	<entry key="refresh_token" value="refresh_token"/>
+	        	<entry key="delete" value="delete"/>
 	        </map>
 		</property>
 	</bean>

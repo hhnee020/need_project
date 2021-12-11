@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="loginMember">
+	
+	<typeAlias  alias="egovMap"  type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	
+	<select id="loginDAO.hasSnsMember" resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM MEMBER WHERE USER_ID = #id#
+	</select>
+	<select id="loginDAO.totalMember" resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM MEMBER
+	</select>
+	
+	<insert id="loginDAO.insertMember">
+		INSERT ALL 
+			INTO member(member_no, user_id, user_rdate, user_udate, user_grade, platform_type) 
+				VALUES (member_no_seq.nextval, '$user_id$' , sysdate, sysdate , '일반', '$platform_type$')
+			INTO snsmem(member_no, user_id, access_token, refresh_token) 
+				VALUES (snsmem_no_seq.nextval, '$user_id$' , '$access_token$', '$refresh_token$')
+    		SELECT * FROM DUAL;
+	</insert>
+	
+	<select id="loginDAO.testselect" resultClass="egovMap">
+		select * from snsmem
+	</select>
+</sqlMap>

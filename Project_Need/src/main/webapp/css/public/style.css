@@ -42,7 +42,7 @@
     .th1 ,.td1, .th1 > a ,.td1 > a{text-align: center;}
     .table1{ width: 1000px; color : #666; border: solid 1px ; }
 
-    
+    .btn1{text-align: center;}
     .btn1 > .btn-primary{
         background-color: #04b4f6;
         border-color: #04b4f6;
@@ -57,7 +57,8 @@
     
     .popupadm1  tr {height: 50px;}
     
- 
+    
+ 	
        
     .popupbtn1 > .btn-primary{
    	

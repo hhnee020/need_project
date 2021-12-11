@@ -32,8 +32,8 @@
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@irinaliz.xyz:1521:ORCL" />
-        <property name="username" value="leebomin"/>
-        <property name="password" value="senymph2584"/>
+        <property name="username" value="need"/>
+        <property name="password" value="need1234"/>
     </bean>
     
 </beans>
